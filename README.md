@@ -58,7 +58,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
 1. **EDA Summary**
    
-   - Dataset shape & class distribution
+   **- Dataset shape & class distribution**
      
        •    Training set: 10,000 RGB images, size 32×32×3
      
@@ -68,8 +68,8 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
        •	Balanced across categories, ranging from 937 to 1,032 images per class.
        
-   - Sample image visualization
-   - Pixel intensity analysis
+  **- Sample image visualization**
+   **- Pixel intensity analysis**
      
      	•	Most pixel values range from 50 to 150 (moderate brightness).
      
@@ -83,7 +83,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
      
 	    •	No strong color bias — suitable for CNN training.
      
-   - Data Quality and Basic Statistics
+   **- Data Quality and Basic Statistics**
      
      •	No missing, NaN, or Inf values.
      
