@@ -44,7 +44,7 @@ By applying deep learning with transfer learning, companies can leverage pre-tra
 ## 📂 Dataset
 
 The project uses the **CIFAR-10** dataset:
-This dataset is also available in TensorFlow & Keras. 
+This **dataset is also available** in TensorFlow & Keras. 
 Here is how you can import it: from tensorflow.keras.datasets import cifar10
 - **60,000** 32x32 RGB images
 - **10 classes**, each with **6,000 images**
@@ -60,26 +60,38 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
    
    - Dataset shape & class distribution
      
-       •	Training set: 10,000 RGB images, size 32×32×3
-	     •	Test set: 10,000 RGB images, size 32×32×3
-	     •	Classes: 10 mutually exclusive categories (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck)
+       •    Training set: 10,000 RGB images, size 32×32×3
+     
+	   •	Test set: 10,000 RGB images, size 32×32×3
+
+	   •	Classes: 10 mutually exclusive categories (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck)
+
        •	Balanced across categories, ranging from 937 to 1,032 images per class.
        
    - Sample image visualization
    - Pixel intensity analysis
+     
      	•	Most pixel values range from 50 to 150 (moderate brightness).
+     
 	    •	Few pixels are near 0 (pure black) or 255 (pure white).
+     
 	    •	Indicates well-lit, balanced images without extreme contrast.
-      •	Red & Green channels peak around 100–120, fairly symmetric.
+     
+        •	Red & Green channels peak around 100–120, fairly symmetric.
+     
 	    •	Blue channel slightly darker overall, peaking near 100.
+     
 	    •	No strong color bias — suitable for CNN training.
      
    - Data Quality and Basic Statistics
      
      •	No missing, NaN, or Inf values.
-	   •	All images have consistent size (32×32×3).
+     
+	 •	All images have consistent size (32×32×3).
+
      •	Mean pixel value: 121.04
-	   •	Pixel standard deviation: 64.39
+     
+	 •	Pixel standard deviation: 64.39
 
 3. **Data Preprocessing**
    - Image normalization
