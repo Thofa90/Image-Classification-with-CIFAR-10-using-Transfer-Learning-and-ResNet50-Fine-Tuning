@@ -68,7 +68,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
        •	Balanced across categories, ranging from 937 to 1,032 images per class.
        
-  **- Sample image visualization**
+   **- Sample image visualization**
    **- Pixel intensity analysis**
      
      	•	Most pixel values range from 50 to 150 (moderate brightness).
