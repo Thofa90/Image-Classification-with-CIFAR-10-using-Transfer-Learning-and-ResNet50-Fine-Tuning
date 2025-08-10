@@ -218,7 +218,7 @@ Steps Taken
  
 		•	Trained for more epochs to allow deeper learning, balanced with early stopping to avoid overfitting.
   
-7. **Evaluation**
+7. **Evaluation after fine tuning**
 
 After fine-tuning the ResNet50 model with additional hidden layers, dropout regularization, reduced learning rate, data augmentation, and early stopping, the model achieved 71.04% accuracy on the test set.
  
@@ -263,6 +263,9 @@ After fine-tuning the ResNet50 model with additional hidden layers, dropout regu
 
 	•	Observation: Most classes maintain balanced precision and recall.
 	•	Insight: Variations between precision and recall highlight the trade-off between false positives and false negatives per class.
+ 
+![Metrics by Class](assets/all metric.png)
+
 
 ✅ Final Summary
 	•	Final Test Accuracy: 71.04%
@@ -273,6 +276,60 @@ After fine-tuning the ResNet50 model with additional hidden layers, dropout regu
 	•	Fine-tuning additional layers in ResNet50.
 	•	Experimenting with learning rate schedules.
 
+8. **Evaluation after further fine-tuning**
+
+**📌 Updated CIFAR-10 Image Classification Model (88.82% Accuracy)**
+
+**🚀 Update Summary**
+
+In this updated version of the CIFAR-10 classification project, two major improvements were implemented based on previous analysis and suggestions:
+
+1. **Resize Images to 96×96**
+   
+   - The original dataset consists of 32×32 images.
+   - Resizing to 96×96 allows the pre-trained ResNet50 model to capture richer spatial and texture features.
+   - This step aligns better with the model's original training resolution, boosting feature extraction quality.
+
+3. **Balanced Class-Weighted Loss**
+   
+   - Applied `class_weight` parameter during training to handle any class imbalance.
+   - Helps the model give fair importance to underrepresented classes.
+   - Reduces bias towards dominant classes and improves macro average metrics.
+
+---
+
+**📊 Results After Improvements**
+
+- **Final Accuracy:** **88.82%** ✅
+  
+- Significant boost from previous fine-tuned accuracy (**71.04%**).
+- Noticeable improvement across all classes in **Precision, Recall, and F1-score**.
+- Reduced misclassification between visually similar classes (e.g., cat vs dog, automobile vs truck).
+
+---
+
+## 📂 Colab Notebook
+You can run the updated version in Google Colab here:
+
+🔗 **[Open in Colab]([YOUR_COLAB_LINK_HERE](https://colab.research.google.com/drive/1ihXbcwJw1KsqEhGQY5ChkOigSSfGl5Lw?usp=sharing))**
+
+---
+
+**🔍 Key Benefits of These Changes**
+
+- **Higher Resolution Input** → More detailed feature maps, better object boundaries detected.
+- **Class-Weighted Loss** → Improved fairness in classification results, higher macro F1-score.
+- **Better Generalization** → Model performs well on both seen and unseen data.
+
+---
+
+**📌 Next Steps**
+
+- Experiment with **EfficientNetB3** for even better performance with 96×96 input.
+- Use **mixup** or **cutmix** augmentation to further improve robustness.
+- Try **learning rate scheduling** for optimized convergence.
+
+---
 ---
 
 ## 🚀 Usage
