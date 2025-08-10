@@ -93,7 +93,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
      
 	   •	Pixel standard deviation: 64.39
 
-3. **Data Preprocessing**
+2. **Data Preprocessing**
    
     1.	Normalization
     
@@ -114,7 +114,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
     ✅ Outcome: Data is clean, scaled, and formatted correctly for CNN-based image classification.
 
-4. **Baseline Model**
+3. **Baseline Model**
    
 **🔹 Pre-trained Model: ResNet50 Setup**
 
@@ -147,6 +147,29 @@ We used ResNet50 (pre-trained on ImageNet) as the base model for CIFAR-10 classi
 	   •	Trained the custom head for 10 epochs with a batch size of 64, keeping the base model frozen.
 
     ✅ Purpose: This approach leverages ResNet50’s powerful pre-trained features, while allowing the custom top layers to adapt specifically to CIFAR-10.
+	
+4. **Baseline Model evaluation**
+
+📊 Baseline Model Results (Frozen ResNet50 + Custom Head)
+
+**Training Performance:**
+	•	Train Accuracy: 33.7%
+	•	Validation Accuracy: 30.6%
+	•	Train Loss: 1.8272
+	•	Validation Loss: 1.9234
+
+**Progress Analysis:**
+	•	✅ Accuracy improved from ~13% (random guessing) to ~33% — showing the model learned basic patterns.
+	•	⚠️ Validation accuracy plateaued after epoch 4–5 (~30–32%), suggesting the head reached its learning limit.
+	•	⚠️ Validation loss began increasing → early signs of overfitting with frozen base layers.
+
+**Conclusion & Next Steps:**
+	•	The frozen ResNet50 base provided useful features, but training only the custom head was insufficient.
+	•	To improve:
+	  1.	Unfreeze deeper ResNet50 layers for fine-tuning.
+	  2.	Apply data augmentation to improve generalization.
+	  3.	Train longer with early stopping to prevent overfitting.
+
 	
 5. **Fine-Tuning**
    - Unfreezing layers
