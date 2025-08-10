@@ -182,10 +182,31 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	
 6. **Fine-Tuning**
    
-   - Unfreezing layers
-   - Adding more hidden layers & dropout
-   - Reducing learning rate
-   - Applying early stopping
+🔧 Fine-Tuning the Baseline ResNet50 Model
+
+Steps Taken
+	1.	Unfrozen the Base Model
+	    •	Allowed deeper ResNet50 layers to be trainable so the model could adapt pretrained features to CIFAR-10.
+	2.	Added Two More Hidden Layers + Dropout
+		•	Purpose of Hidden Layers:
+		•	Learn more abstract patterns from ResNet50 output features.
+		•	Improve feature interaction for complex class distinctions (e.g., cat vs dog).
+		•	Purpose of Dropout:
+		•	Reduce overfitting by randomly disabling neurons during training.
+	    •	Improve generalization to unseen data.
+	3.	Reduced Learning Rate
+		•	Optimizer: Adam with learning_rate=1e-5 for stable transfer learning.
+		•	Loss Function: sparse_categorical_crossentropy for multi-class classification.
+		•	Metrics: Accuracy for training & validation monitoring.
+	4.	Applied Data Augmentation + Early Stopping
+		•	Data Augmentation Benefits:
+		•	Expands training set via random transformations.
+		•	Prevents overfitting & improves robustness to real-world variations.
+		•	Early Stopping Benefits:
+		•	Stops training when validation performance stops improving.
+		•	Saves time & restores best model weights automatically.
+	5.	Increased Epochs
+		•	Trained for more epochs to allow deeper learning, balanced with early stopping to avoid overfitting.
 7. **Evaluation**
    - Accuracy/Loss curves
    - Confusion matrix
