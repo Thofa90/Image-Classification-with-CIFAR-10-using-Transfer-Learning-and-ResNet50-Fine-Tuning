@@ -219,9 +219,28 @@ Steps Taken
 		•	Trained for more epochs to allow deeper learning, balanced with early stopping to avoid overfitting.
   
 7. **Evaluation**
-   - Accuracy/Loss curves
-   - Confusion matrix
-   - Classification report
+ 
+**📊 Model Evaluation & Results**
+
+ **Training vs Validation Accuracy**
+ 
+![Training vs Validation Accuracy](assets/train_val_accuracy.png)
+
+**Training vs Validation Loss**
+
+![Training vs Validation Loss](assets/train_val_loss.png)
+
+**Confusion Matrix**
+
+![Confusion Matrix](assets/confusion_matrix.png)
+
+**Classification Report**
+
+![Classification Report](assets/classification_report.png)
+
+**Metrics by Class**
+
+![Metrics by Class](assets/metrics_by_class.png)
 
 ---
 
