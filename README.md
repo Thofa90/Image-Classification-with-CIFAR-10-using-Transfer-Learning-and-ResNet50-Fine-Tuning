@@ -219,6 +219,8 @@ Steps Taken
 		•	Trained for more epochs to allow deeper learning, balanced with early stopping to avoid overfitting.
   
 7. **Evaluation**
+
+After fine-tuning the ResNet50 model with additional hidden layers, dropout regularization, reduced learning rate, data augmentation, and early stopping, the model achieved 71.04% accuracy on the test set.
  
 **📊 Model Evaluation & Results**
 
@@ -226,21 +228,50 @@ Steps Taken
  
 ![Training vs Validation Accuracy](assets/train_val_accuracy.png)
 
+	•	Observation: Accuracy steadily improved for both training and validation sets.
+	•	Key Insight: The gap between training and validation accuracy is small, indicating reduced overfitting due to dropout and data augmentation.
+	•	Peak Validation Accuracy: ~71%
+
 **Training vs Validation Loss**
 
 ![Training vs Validation Loss](assets/train_val_loss.png)
+
+	•	Observation: Loss decreases steadily without significant divergence between training and validation curves.
+	•	Key Insight: Model generalized well and avoided severe overfitting.
 
 **Confusion Matrix**
 
 ![Confusion Matrix](assets/confusion_matrix.png)
 
+	•	Observation:
+	•	High accuracy for frog (class 6), ship (class 8), and automobile (class 1).
+	•	Lower performance for cat (class 3) and bird (class 2) — these may share visual similarities with other classes (e.g., dog, deer).
+	•	Key Insight: Misclassifications often occur between visually similar classes.
+
 **Classification Report**
 
 ![Classification Report](assets/classification_report.png)
 
+	•	Macro Avg F1-Score: 0.704
+	•	Highest Precision: Ship (0.8828)
+	•	Highest Recall: Frog (0.8920)
+	•	Lowest F1: Cat (0.4988) → needs targeted improvement.
+
 **Metrics by Class**
 
 ![Metrics by Class](assets/metrics_by_class.png)
+
+	•	Observation: Most classes maintain balanced precision and recall.
+	•	Insight: Variations between precision and recall highlight the trade-off between false positives and false negatives per class.
+
+✅ Final Summary
+	•	Final Test Accuracy: 71.04%
+	•	Strengths: Strong performance on structured, distinctive classes like automobiles, ships, and frogs.
+	•	Weaknesses: Struggles with classes that have high intra-class variation (cats, birds).
+	•	Future Work:
+	•	Class-specific data augmentation (e.g., more varied cat/bird images).
+	•	Fine-tuning additional layers in ResNet50.
+	•	Experimenting with learning rate schedules.
 
 ---
 
