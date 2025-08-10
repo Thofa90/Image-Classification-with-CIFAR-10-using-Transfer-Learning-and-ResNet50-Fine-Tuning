@@ -95,7 +95,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
 3. **Data Preprocessing**
    
-	1.	Normalization
+ 1.	Normalization
     
 	•	All images were normalized by dividing pixel values by 255.0, scaling them to the range [0, 1].
 
@@ -108,7 +108,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	   •	Mean pixel value: 0.4747
 	   •	Pixel standard deviation: 0.2525
 
-	2.	Label Preparation
+ 2.	Label Preparation
 	•	Flattened label arrays to ensure compatibility with sparse loss functions during training.
 
     ✅ Outcome: Data is clean, scaled, and formatted correctly for CNN-based image classification.
