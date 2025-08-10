@@ -85,13 +85,13 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
      
    **- Data Quality and Basic Statistics**
      
-     •	No missing, NaN, or Inf values.
+       •	No missing, NaN, or Inf values.
      
-	 •	All images have consistent size (32×32×3).
+	   •	All images have consistent size (32×32×3).
 
-     •	Mean pixel value: 121.04
+       •	Mean pixel value: 121.04
      
-	 •	Pixel standard deviation: 64.39
+	   •	Pixel standard deviation: 64.39
 
 3. **Data Preprocessing**
    
@@ -114,8 +114,39 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
     ✅ Outcome: Data is clean, scaled, and formatted correctly for CNN-based image classification.
 
 4. **Baseline Model**
-   - ResNet50 feature extraction (frozen layers)
-   - Dense layers for classification
+   
+**🔹 Pre-trained Model: ResNet50 Setup**
+
+We used ResNet50 (pre-trained on ImageNet) as the base model for CIFAR-10 classification, following these steps:
+
+	1.	Load Pre-trained ResNet50
+ 
+	   •	Imported ResNet50 with weights='imagenet', excluding the top classification layer (include_top=False) to use it as a feature extractor.
+	   •	Input shape set to (32, 32, 3) for CIFAR-10 images.
+	
+	2.	Freeze Base Layers
+ 
+	   •	Set base_model.trainable = False to retain the pre-trained weights and avoid updating them in the initial training phase.
+	
+	3.	Add Custom Classification Head
+ 
+	   •	GlobalAveragePooling2D → Converts feature maps into a single vector.
+	   •	Dense(512, relu) → First fully connected layer for feature learning.
+	   •	Dense(256, relu) → Second hidden layer for deeper representation.
+	   •	Dense(10, softmax) → Output layer for 10 CIFAR-10 classes.
+	
+	4.	Compile the Model
+ 
+	   •	Optimizer: Adam
+	   •	Loss: Sparse Categorical Crossentropy (for integer labels)
+	   •	Metric: Accuracy
+	
+	5.	Train the Head
+ 
+	   •	Trained the custom head for 10 epochs with a batch size of 64, keeping the base model frozen.
+
+    ✅ Purpose: This approach leverages ResNet50’s powerful pre-trained features, while allowing the custom top layers to adapt specifically to CIFAR-10.
+	
 5. **Fine-Tuning**
    - Unfreezing layers
    - Adding more hidden layers & dropout
