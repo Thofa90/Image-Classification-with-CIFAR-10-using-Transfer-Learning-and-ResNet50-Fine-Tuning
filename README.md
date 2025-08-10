@@ -116,33 +116,33 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
 3. **Baseline Model**
    
-**🔹 Pre-trained Model: ResNet50 Setup**
+   **🔹 Pre-trained Model: ResNet50 Setup**
 
-We used ResNet50 (pre-trained on ImageNet) as the base model for CIFAR-10 classification, following these steps:
+   We used ResNet50 (pre-trained on ImageNet) as the base model for CIFAR-10 classification, following these steps:
 
-	1.	Load Pre-trained ResNet50
+	 1.	Load Pre-trained ResNet50
  
-	   •	Imported ResNet50 with weights='imagenet', excluding the top classification layer (include_top=False) to use it as a feature extractor.
-	   •	Input shape set to (32, 32, 3) for CIFAR-10 images.
+	    •	Imported ResNet50 with weights='imagenet', excluding the top classification layer (include_top=False) to use it as a feature extractor.
+	    •	Input shape set to (32, 32, 3) for CIFAR-10 images.
 	
-	2.	Freeze Base Layers
+	 2.	Freeze Base Layers
  
-	   •	Set base_model.trainable = False to retain the pre-trained weights and avoid updating them in the initial training phase.
+	    •	Set base_model.trainable = False to retain the pre-trained weights and avoid updating them in the initial training phase.
 	
-	3.	Add Custom Classification Head
+	 3.	Add Custom Classification Head
  
-	   •	GlobalAveragePooling2D → Converts feature maps into a single vector.
-	   •	Dense(512, relu) → First fully connected layer for feature learning.
-	   •	Dense(256, relu) → Second hidden layer for deeper representation.
-	   •	Dense(10, softmax) → Output layer for 10 CIFAR-10 classes.
+	    •	GlobalAveragePooling2D → Converts feature maps into a single vector.
+	    •	Dense(512, relu) → First fully connected layer for feature learning.
+	    •	Dense(256, relu) → Second hidden layer for deeper representation.
+	    •	Dense(10, softmax) → Output layer for 10 CIFAR-10 classes.
 	
-	4.	Compile the Model
+	  4.	Compile the Model
  
 	   •	Optimizer: Adam
 	   •	Loss: Sparse Categorical Crossentropy (for integer labels)
 	   •	Metric: Accuracy
 	
-	5.	Train the Head
+	 5.	Train the Head
  
 	   •	Trained the custom head for 10 epochs with a batch size of 64, keeping the base model frozen.
 
