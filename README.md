@@ -311,6 +311,14 @@ In this updated version of the CIFAR-10 classification project, two major improv
 - Noticeable improvement across all classes in **Precision, Recall, and F1-score**.
 - Reduced misclassification between visually similar classes (e.g., cat vs dog, automobile vs truck).
 
+**📊 Model Performance Comparison**
+
+| Version | Changes Implemented | Accuracy | Macro F1-score | Avg Precision | Avg Recall | Notable Improvements |
+|---------|--------------------|----------|----------------|---------------|------------|----------------------|
+| **Baseline** | Pre-trained ResNet50 (frozen base), trained head only | 31.76% | — | — | — | Model learning started but very limited generalization |
+| **Fine-Tuned** | Unfrozen base, added hidden layers + dropout, reduced LR, data augmentation, early stopping | 71.04% | 0.7045 | ~0.72 | ~0.70 | Significant improvement in accuracy and generalization; reduced overfitting |
+| **Updated Version** | Fine-tuned + Image resize to 96×96 + Class-weighted loss | **88.82%** | ~0.885 | ~0.89 | ~0.88 | Huge jump in accuracy; better handling of class imbalance and higher-resolution features |
+
 ---
 
 ## 📂 Colab Notebook
