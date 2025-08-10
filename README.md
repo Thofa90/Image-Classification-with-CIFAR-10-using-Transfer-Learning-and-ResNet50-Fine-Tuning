@@ -123,23 +123,29 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	 1.	Load Pre-trained ResNet50
  
 	    •	Imported ResNet50 with weights='imagenet', excluding the top classification layer (include_top=False) to use it as a feature extractor.
+    	
 	    •	Input shape set to (32, 32, 3) for CIFAR-10 images.
 	
-	 2.	Freeze Base Layers
+	 3.	Freeze Base Layers
  
 	    •	Set base_model.trainable = False to retain the pre-trained weights and avoid updating them in the initial training phase.
 	
-	 3.	Add Custom Classification Head
+	 4.	Add Custom Classification Head
  
 	    •	GlobalAveragePooling2D → Converts feature maps into a single vector.
+    	
 	    •	Dense(512, relu) → First fully connected layer for feature learning.
+    	
 	    •	Dense(256, relu) → Second hidden layer for deeper representation.
+    	
 	    •	Dense(10, softmax) → Output layer for 10 CIFAR-10 classes.
 	
-	 4. Compile the Model
+	 6. Compile the Model
  
 	   •  Optimizer: Adam
+   
 	   •  Loss: Sparse Categorical Crossentropy (for integer labels)
+   
 	   •  Metric: Accuracy
 	
 	 5.	Train the Head
@@ -148,7 +154,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 
     ✅ Purpose: This approach leverages ResNet50’s powerful pre-trained features, while allowing the custom top layers to adapt specifically to CIFAR-10.
 	
-4. **Baseline Model evaluation**
+5. **Baseline Model evaluation**
 
  📊 Baseline Model Results (Frozen ResNet50 + Custom Head)
 
