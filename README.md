@@ -156,22 +156,22 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	
 5. **Baseline Model evaluation**
 
- 📊 Baseline Model Results (Frozen ResNet50 + Custom Head)
+   📊 Baseline Model Results (Frozen ResNet50 + Custom Head)
 
- **Training Performance:**
+   **Training Performance:**
  
 	•	Train Accuracy: 33.7%
 	•	Validation Accuracy: 30.6%
 	•	Train Loss: 1.8272
 	•	Validation Loss: 1.9234
 
- **Progress Analysis:**
+   **Progress Analysis:**
  
 	•	✅ Accuracy improved from ~13% (random guessing) to ~33% — showing the model learned basic patterns.
 	•	⚠️ Validation accuracy plateaued after epoch 4–5 (~30–32%), suggesting the head reached its learning limit.
 	•	⚠️ Validation loss began increasing → early signs of overfitting with frozen base layers.
 
- **Conclusion & Next Steps:**
+   **Conclusion & Next Steps:**
  
 	•	The frozen ResNet50 base provided useful features, but training only the custom head was insufficient.
 	•	To improve:
@@ -180,7 +180,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	  3.	Train longer with early stopping to prevent overfitting.
 
 	
-5. **Fine-Tuning**
+6. **Fine-Tuning**
    
    - Unfreezing layers
    - Adding more hidden layers & dropout
