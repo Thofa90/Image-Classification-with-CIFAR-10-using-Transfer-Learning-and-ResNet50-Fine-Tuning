@@ -218,7 +218,7 @@ Steps Taken
  
 		•	Trained for more epochs to allow deeper learning, balanced with early stopping to avoid overfitting.
   
-7. **Evaluation after fine tuning**
+7. **Evaluation after fine-tuning**
 
 After fine-tuning the ResNet50 model with additional hidden layers, dropout regularization, reduced learning rate, data augmentation, and early stopping, the model achieved 71.04% accuracy on the test set.
  
@@ -264,7 +264,7 @@ After fine-tuning the ResNet50 model with additional hidden layers, dropout regu
 	•	Observation: Most classes maintain balanced precision and recall.
 	•	Insight: Variations between precision and recall highlight the trade-off between false positives and false negatives per class.
  
-![Metrics by Class](assets/all metric.png)
+![Metrics by Class](assets/all_metric.png)
 
 
 ✅ Final Summary
