@@ -98,8 +98,11 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	1.	Normalization
     
 	•	All images were normalized by dividing pixel values by 255.0, scaling them to the range [0, 1].
+
 	•	Benefits: Improves convergence speed and stability during training.
+
 	•	Post-normalization stats:
+
 	   •	Train images shape: (10,000, 32, 32, 3)
 	   •	Test images shape: (10,000, 32, 32, 3)
 	   •	Mean pixel value: 0.4747
@@ -108,7 +111,7 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	2.	Label Preparation
 	•	Flattened label arrays to ensure compatibility with sparse loss functions during training.
 
-✅ Outcome: Data is clean, scaled, and formatted correctly for CNN-based image classification.
+    ✅ Outcome: Data is clean, scaled, and formatted correctly for CNN-based image classification.
 
 4. **Baseline Model**
    - ResNet50 feature extraction (frozen layers)
