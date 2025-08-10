@@ -136,15 +136,15 @@ Here is how you can import it: from tensorflow.keras.datasets import cifar10
 	    •	Dense(256, relu) → Second hidden layer for deeper representation.
 	    •	Dense(10, softmax) → Output layer for 10 CIFAR-10 classes.
 	
-	  4.	Compile the Model
+	 4. Compile the Model
  
-	   •	Optimizer: Adam
-	   •	Loss: Sparse Categorical Crossentropy (for integer labels)
-	   •	Metric: Accuracy
+	   •  Optimizer: Adam
+	   •  Loss: Sparse Categorical Crossentropy (for integer labels)
+	   •  Metric: Accuracy
 	
 	 5.	Train the Head
  
-	   •	Trained the custom head for 10 epochs with a batch size of 64, keeping the base model frozen.
+	   • Trained the custom head for 10 epochs with a batch size of 64, keeping the base model frozen.
 
     ✅ Purpose: This approach leverages ResNet50’s powerful pre-trained features, while allowing the custom top layers to adapt specifically to CIFAR-10.
 	
