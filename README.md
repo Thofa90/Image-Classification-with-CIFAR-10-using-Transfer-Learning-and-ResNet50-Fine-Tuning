@@ -268,6 +268,7 @@ After fine-tuning the ResNet50 model with additional hidden layers, dropout regu
 
 
 ✅ Final Summary
+
 	•	Final Test Accuracy: 71.04%
 	•	Strengths: Strong performance on structured, distinctive classes like automobiles, ships, and frogs.
 	•	Weaknesses: Struggles with classes that have high intra-class variation (cats, birds).
@@ -301,6 +302,10 @@ In this updated version of the CIFAR-10 classification project, two major improv
 **📊 Results After Improvements**
 
 - **Final Accuracy:** **88.82%** ✅
+
+  ![Train_Validation_Accuracy](assets/2nd_train_val_accuracy.png)
+  ![Train_Validation_loss](assets/2nd_train_val_loss.png)
+  ![Classification report](assets/2nd_classification.png)
   
 - Significant boost from previous fine-tuned accuracy (**71.04%**).
 - Noticeable improvement across all classes in **Precision, Recall, and F1-score**.
@@ -309,7 +314,9 @@ In this updated version of the CIFAR-10 classification project, two major improv
 ---
 
 ## 📂 Colab Notebook
+
 You can run the updated version in Google Colab here:
+This part is only the base model with the unfreeze option.
 
 🔗 **[Open in Colab]([YOUR_COLAB_LINK_HERE](https://colab.research.google.com/drive/1ihXbcwJw1KsqEhGQY5ChkOigSSfGl5Lw?usp=sharing))**
 
